@@ -7,3 +7,30 @@ import { strict as assert } from "assert";
 // express conditions and make decisions based on the truth or falsehood of
 // these conditions.
 //
+
+const yes = true;
+const no = false;
+
+const age = 18;
+const canPurchase = age >= 18;
+assert.equal (canPurchase, true);
+
+//assert is a code from another person which checkst if the code does what we think it does 
+
+const denyPurchase = age < 19;
+assert.equal (denyPurchase, false);
+
+const two = 2;
+const isThree = (1 + two) === 3;
+assert.equal(isThree, true);
+//is as prefix is a idicator for a Boolean
+
+const isNotThree = (1 + two) !== 10;
+assert.equal (isNotThree, true);
+
+// <
+// <=
+// >
+// >=
+// ===
+// !==
