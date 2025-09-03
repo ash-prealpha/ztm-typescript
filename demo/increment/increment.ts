@@ -8,3 +8,20 @@ import { strict as assert } from "assert";
 // Useful links:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
 //
+
+let n =1;
+n++;
+assert.equal (n, 2);
+//"postfix" increment
+
+++n; 
+assert.equal (n, 3);
+//"prefix" increment
+
+n = 5;
+const k = ++n;
+assert.equal (k, 6);
+
+n = 5;
+const j = n++;
+assert.equal (j, 5);
