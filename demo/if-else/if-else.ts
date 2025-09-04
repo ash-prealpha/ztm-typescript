@@ -42,4 +42,53 @@ if (answer < 4)
             }
 
 
-   
+   const hasTheSkills = true;
+   const day = "tuesday";
+   const hoursWorked = 9;
+   const totalOvertime = 0.5;
+   const holidaySeason = false;
+
+   function approveWork ()
+   {
+    if 
+    (
+        (hasTheSkills && (day === "tuesday" || (hoursWorked > 8 && totalOvertime < 1))) || holidaySeason 
+    )
+        {
+            //approve work
+        }
+        else 
+            {
+                //go home
+            }
+   }
+
+   function approveMoreWork ()
+   {
+    if (!hasTheSkills)
+    {
+        return;
+    }
+
+    if (!hasOvertimeHourse(hoursWorked, totalOvertime))
+    {
+        return;
+    }
+
+    if (!isBusyDay (day, holidaySeason))
+    {
+        //go home
+        return;
+    }
+   }
+
+   function hasOvertimeHourse (hoursWorked: number, totalOvertime : number) : boolean
+   {
+    const hasHours = hoursWorked > 8 && totalOvertime < 1;
+    return hasHours; 
+   }
+
+   function isBusyDay (day: string, holidaySeason: boolean) : boolean 
+   {
+    return holidaySeason || day === "tuesday";
+   }
