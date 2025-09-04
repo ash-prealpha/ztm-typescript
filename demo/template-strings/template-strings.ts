@@ -23,5 +23,5 @@ const totalPeople = `There are ${kids + adults} people`;
 const totalAttending = kids + adults;
 const message = `There are ${totalAttending} people`;
 
-console.log(`${message} to seat at the restaurant.`);
+console.log(`${message} to seat at the`);
 
