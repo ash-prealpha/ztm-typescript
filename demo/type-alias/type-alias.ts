@@ -10,3 +10,24 @@ import { strict as assert } from "assert";
 // Useful links:
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
 //
+
+type PersonName = string;
+
+const myName : PersonName = "Ash";
+const alsoMyName : string = "Ash";
+
+//BAD EXAMPLE
+function print (thing : string)
+{
+    console.log (`Name is ${thing}`);
+}
+
+print("a house");
+
+//GOOD EXAMPLE
+function printName (name: PersonName)
+{
+    console.log (`Name is ${name}`);
+}
+
+printName (myName);
