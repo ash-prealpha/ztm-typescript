@@ -10,3 +10,22 @@
 import { strict as assert } from "assert";
 
 
+function firstname (): string
+{
+    return "Ash";
+};
+
+function lastname () : string
+{
+    return "Krawczyk";
+};
+
+
+function fullname (first : string, last : string) : string
+{
+    return `${first} ${last} `;
+};
+
+ console.log (fullname (firstname(), lastname()));
+
+ 
