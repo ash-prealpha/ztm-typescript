@@ -11,3 +11,46 @@ import { strict as assert } from "assert";
 // Useful links:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 //
+
+
+const number: number[] = [1, 2, 3];
+let letters: string[] = ["a", "b", "c"];
+
+letters = ["a", "b", "c"];
+//          0    1    2
+
+const b = letters[1] ;
+assert.equal (b, "b");
+
+letters[1] = "z";
+assert(letters[1] === "z");
+assert.deepEqual (letters, ["a", "z", "c"]);
+
+//try to avoid this:
+const mixed = [1, "hello"];
+
+const names = 
+[
+    ["Jayson", "L"],
+    ["Ash", "K"],
+    ["Leonard", "G"],
+];
+
+const jayson = names[0][0]
+const L = names [0][1]
+const K = names [1][1]
+
+//to add an element to an array:
+const nums: number[] = [];
+nums.push (10);
+nums.push (20);
+nums.push (30);
+assert.deepEqual (nums, [10, 20, 30]);
+
+//to remove the last element:
+nums.pop ();
+assert.deepEqual (nums, [10, 20]);
+
+//to remove elements on specific positions:
+nums.splice(0, 1);
+assert.deepEqual (nums, [20]);
