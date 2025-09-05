@@ -11,3 +11,26 @@
 import { strict as assert } from "assert";
 
 
+const temperature = 68;
+const Unite = "F";
+
+function convertCtF (temperature : number) : number
+{
+    console.log ("convert °C to °F");
+    return (temperature * 1.8) + 32;
+}
+
+function convertFtC (temperature : number) : number
+{
+    console.log ("convert °F to °C")
+    return (temperature - 32) / 1.8;
+}
+
+
+function ConverttoUnite (temperature : number, Unite : "C" | "F") : number
+{
+    return Unite === "C" ? convertCtF (temperature) : convertFtC (temperature);
+}
+
+console.log (`Temperatuer: ${temperature} ${Unite}`);
+console.log (`${ConverttoUnite (temperature, Unite)}`);
