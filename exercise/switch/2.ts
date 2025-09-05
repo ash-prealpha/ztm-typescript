@@ -13,6 +13,29 @@
 // - Ensure the function handles invalid options gracefully by printing
 //   "Invalid option selected" if any number other than 1, 2, 3, 4 are selected
 
+const optionchoice : number = 2
+
+function handleMenuSelection (optionchoice : number)
+{
+    if (optionchoice >= 1 && optionchoice <= 4)
+    {
+        switch (optionchoice)
+        {
+            case 1 : console.log ("Option 1 selected.")
+            break;
+            case 2 : console.log ("Option 2 selected.")
+            break;
+            case 3 : console.log ("Option 3 selected.")
+            break;
+            case 4 : console.log ("Option 3 selected.")
+            break;
+        }
+    }
+    else
+            {
+                console.log ("Invalid option selected");
+            }
+}
 
 // Test cases
 handleMenuSelection(1);  // Output: Option 1 selected.
