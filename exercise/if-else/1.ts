@@ -31,4 +31,41 @@
 // Change this to different values to check your program behavior.
 const age = 25;
 
+console.log (`Purchaser Age: ${age}`);
+
+function Purchaseallowed (age : number)
+{
+    if (age > 18)
+    {
+        console.log ("OK to purchase.");
+    }
+
+    else 
+    {
+        console.log ("CANNOT purchase")
+    }
+
+}
+
+Purchaseallowed (age);
+
+function AgeGroupe (age)
+{
+    if (age < 18)
+    {
+        console.log ("Purchaser is a child.");
+        return;
+    }
+    else if (age < 65)
+            {
+                console.log ("Purchaser is an adult.");
+                return;
+            }
+            else 
+                    {
+                        console.log ("Purchaser is a senior.");
+                    }
+}
+
+AgeGroupe (age);
 
