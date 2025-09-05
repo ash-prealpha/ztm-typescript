@@ -19,10 +19,32 @@
 
 import { strict as assert } from "assert";
 
+function sum (x : number, y : number, z : number) : number
+{
+    const xyz = x + y + z;
+    return xyz;
+}
+
+function calculateAverage (x : number, y : number, z : number) : number
+{
+    const Average = sum (x, y, z) / 3;
+    return Average;
+}
+
+function isAboveThreshold (Average : number, Threshold : number) : boolean
+{
+   return Average > Threshold;
+}
 
 //
 // Test cases
 assert.equal(calculateAverage(10, 20, 30), 20);
 assert.equal(isAboveThreshold(20, 15), true);
+
+const Average = calculateAverage (10, 20, 30);
+const AboveThreshold = isAboveThreshold (Average, 15);
+
+console.log (`Average is ${Average}. `);
+console.log (`Is Average abve Threshold of 15? - ${AboveThreshold}`);
 
 
