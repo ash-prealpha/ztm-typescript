@@ -22,11 +22,32 @@
 /* eslint-disable */
 
 // Change this to different values to check your program behavior.
-const temperature = 15; // Example: 15°C
+const temperature = 9; // Example: 15°C
 
 //
 // Put your code here to check the current temperature
 //
+
+function CurrentTemperature (temperature : number)
+{
+    if (temperature <= 10)
+    {
+        console.log ("It's cold, wear a coat.");
+        return;
+    }
+    else if (temperature >= 20)
+            {
+                console.log ("It's warm, no need for a coat.");
+                return;
+            }
+            else
+                    {
+                        console.log ("Mild weather, bring a light jacket.");
+                        return;
+                    }
+}
+
+CurrentTemperature (temperature);
 
 // Change this to different values to check your program behavior.
 const isRaining = true;
@@ -35,3 +56,12 @@ const isRaining = true;
 // Put your code here to check if it's raining
 //
 //
+
+function UmbrellaNeed (isRaining)
+{
+ const Rain = isRaining ? (console.log ("Don't forget your umbrella!")) : (console.log ("No umbrella needed")); 
+ return Rain;
+}
+
+UmbrellaNeed (isRaining);
+
