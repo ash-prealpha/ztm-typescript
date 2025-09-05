@@ -22,18 +22,58 @@
 
 /* eslint-disable */
 
-// Change this to different values to check your program behavior.
-const currentTime = 1000; // Example: 10 AM
-
-//
-// Put your code here to check if the store is open
-//
-
 // Change these to different values to check your program behavior.
-const userBalance = 50;
+const userBalance = 30;
 const itemPrice = 40;
 
 //
 // Put your code here to check if the user has enough money to make a purchase
 //
 //
+function Purchasepossible (userBalance : number, itemPrice : number)
+{
+   
+    console.log (`User Balance: ${userBalance} $`);
+    console.log (`Item Price: ${itemPrice} $`);
+
+    if (userBalance >= itemPrice)
+    {
+        console.log ("Enough funds");
+        return;
+    }
+    else
+            {
+                console.log ("Insufficent funds");
+                return;
+            }
+
+}
+
+
+// Change this to different values to check your program behavior.
+const currentTime = 900; // Example: 10 AM
+
+//
+// Put your code here to check if the store is open
+//
+
+function StoreOpeningstatus (currentTime : number)
+{
+    if (currentTime >= 900 && currentTime <= 2100)
+    {
+        console.log (`Store is open! It's ${currentTime}.`);
+        Purchasepossible (userBalance, itemPrice);
+        return;
+    }
+    else  
+        {
+            console.log (`Store is closed! It's ${currentTime}.`);
+            return;
+        }
+}
+
+StoreOpeningstatus (currentTime);
+
+
+
+
