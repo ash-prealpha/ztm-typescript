@@ -54,3 +54,23 @@ const ranking = [3, 4, 1, 2];
 const teams = ["red", "blue", "green", "yellow"];
 
 
+const firstRank = ranking.splice(2, 2);
+const newRanking = firstRank.concat (ranking);
+
+const firstTeam = teams.splice(2, 2);
+const newTeams = firstTeam.concat (teams);
+
+assert.deepEqual (newRanking, [1, 2, 3, 4]);
+assert.deepEqual (newTeams, ["green", "yellow", "red", "blue"]);
+
+newRanking.push (5);
+newTeams.push ("pink");
+
+assert.deepEqual (newRanking, [1, 2, 3, 4, 5]);
+assert.deepEqual (newTeams, ["green", "yellow", "red", "blue", "pink"]);
+
+newRanking.reverse();
+newTeams.reverse();
+
+assert.deepEqual (newRanking, [5, 4, 3, 2, 1]);
+assert.deepEqual (newTeams, ["pink", "blue", "red", "yellow", "green"]);
