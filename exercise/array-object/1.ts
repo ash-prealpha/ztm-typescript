@@ -38,3 +38,31 @@ const bob = {
 }
 
 
+function addSection(enrollment: string[], section: string)
+{
+  enrollment.push (section);
+}
+
+function removeSection(enrollment: string[], section: string)
+{
+  const index = enrollment.indexOf (section);
+  if (index !== -1)
+  {
+    enrollment.splice (index, 1);
+  }
+}
+
+function totalEnrollments(enrollment)
+{
+  return enrollment.length;
+}
+
+addSection(alice.enrollments, "CompSci");
+addSection(alice.enrollments, "Networking");
+removeSection(alice.enrollments, "CompSci");
+assert.deepEqual(alice.enrollments, ["Networking"]);
+
+addSection(bob.enrollments, "Networking");
+assert.deepEqual(bob.enrollments, ["Algorithms", "Networking"]);
+totalEnrollments(bob.enrollments)
+assert.equal(totalEnrollments(bob.enrollments), 2)
