@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+import { _ } from "core-js";
+
 // Optional fields are convenient because they allow situations
 // where it may not be appropriate to have data present. However,
 // they make it cumbersome to access any additional data that is
@@ -21,3 +23,64 @@
 // Useful links:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 //
+
+
+interface Pii 
+{
+    age?: number;
+    address?: string;
+}
+
+interface SearchResult 
+{
+    name: string;
+    pii?: Pii;
+}
+
+class Database
+{
+    search(name: string): SearchResult | undefined {
+        switch (name) {
+            case "John":
+                return {
+                    name: "John Doe",
+                    pii: {
+                        age: 22
+                    }
+                };
+            case "Jane":
+                return   {
+                    name: "Jane Doe",
+                }
+            default:
+             return undefined;
+        }
+    }
+}
+
+const database = new Database();
+
+{
+    const result = database.search("John");
+    if
+    (
+        result !== undefined
+        && result !== null
+        && result.pii !== undefined
+        && result.pii !== null
+        && result.pii.age !== undefined
+        && result.pii.age !== null
+    )
+    {
+        console.log(`${result.name} age is ${result.pii.age}`);
+    }
+}
+
+// optional chaining
+{
+     const result = database.search("Jane");
+     if (result?.pii?.age)
+     {
+         console.log(`${result.name} age is ${result.pii.age}`);
+     }
+}
