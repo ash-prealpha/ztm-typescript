@@ -12,3 +12,34 @@ import { strict as assert } from "assert";
 // Useful links:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 //
+
+type Name = string;
+type Score = number;
+
+//                   < Key,   Value>
+const testScores: Map<Name, Score> = new Map();
+
+testScores.set("Alice", 96);
+testScores.set("Bob", 88);
+testScores.set("Carol", 92);
+
+assert.equal(testScores.size, 3); 
+
+//         [Key, Value]
+for (const [name, score] of testScores)
+{
+    //name
+    //score
+    console.log(`${name} score is ${score}`);
+}
+
+testScores.delete("Bob");
+assert.equal(testScores.size, 2); 
+
+assert.equal(testScores.has("Bob"), false);
+
+for (const name of testScores.keys()) {}
+for (const score of testScores.values()) {}
+
+//removes everything from the map
+testScores.clear();
